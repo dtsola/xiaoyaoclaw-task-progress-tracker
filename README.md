@@ -77,6 +77,19 @@ projects/<slug>/         # 长期项目（>一周，时刻维护）
 
 卡片格式见 [templates/](templates/)。
 
+## License
+
+[MIT](LICENSE) © 2026 dtsola
+
+---
+
+## 🛠️ 需要定制？
+
+**Agent & Skills 定制，价格 ¥800 起。**
+
+- 微信：`dtsola`（添加好友时备注：**openclaw定制**）
+- 服务范围：OpenClaw 多 agent 部署 / 工作区规范化 / 自定义 Skill 开发 / agent 记忆系统搭建
+
 ## 姊妹项目
 
 | 项目 | 定位 |
@@ -108,7 +121,3 @@ projects/<slug>/         # 长期项目（>一周，时刻维护）
 </p>
 
 <p align="center">扫码加群，或添加微信 <code>dtsola</code>（备注：<b>加群</b>）</p>
-
-## License
-
-[MIT](LICENSE) © 2026 dtsola
