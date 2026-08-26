@@ -12,6 +12,8 @@
 
 </div>
 
+<img src="./assets/readme/hero.svg" width="100%" alt="OpenClaw Task Progress Tracker — manage tasks/ and projects/ directories with PROGRESS.md cards: status, append-only progress log, and document index">
+
 ---
 
 ## 为什么需要它
