@@ -1,89 +1,122 @@
+# OpenClaw Task Progress Tracker 🗂️
+
 <div align="center">
   <strong>🇨🇳 中文</strong> | <a href="README.en.md">🌐 English</a>
 </div>
 
-<div align="center">
+<p align="center">
+  <img src="./assets/readme/hero.svg" width="100%" alt="OpenClaw Task Progress Tracker — manage tasks/ and projects/ directories with PROGRESS.md cards: status, append-only progress log, and document index">
+</p>
 
-# 🗂️ OpenClaw Task Progress Tracker（任务进度跟踪器）
+> 管理工作区 tasks/ 与 projects/ 目录的轻量进度卡系统——目录即容器，PROGRESS.md 即进度。
+> OpenClaw task & project progress tracking — manage tasks/ and projects/ with PROGRESS.md cards: status + progress log + document index.
 
-**管理工作区 tasks/ 与 projects/ 目录的轻量进度卡系统——目录即容器，PROGRESS.md 即进度。**
-
-纯文件、零依赖、无 CLI。状态 + 进度日志 + 文档索引一体，让每个任务/项目的进度可回溯、文档找得回。
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![OpenClaw](https://img.shields.io/badge/OpenClaw-ready-4b3baf)](https://openclaw.ai)
-[![ClawHub](https://img.shields.io/badge/ClawHub-xiaoyaoclaw--task--progress--tracker-blue)](https://clawhub.ai)
-
-</div>
-
-<img src="./assets/readme/hero.svg" width="100%" alt="OpenClaw Task Progress Tracker — manage tasks/ and projects/ directories with PROGRESS.md cards: status, append-only progress log, and document index">
-
----
+![license](https://img.shields.io/badge/license-MIT-green)
+[![ClawHub downloads](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fclawhub.ai%2Fapi%2Fv1%2Fskills%2Fxiaoyaoclaw-task-progress-tracker&query=skill.stats.downloads&label=ClawHub%20downloads&color=blue)](https://clawhub.ai/dtsola/skills/xiaoyaoclaw-task-progress-tracker)
 
 ## 为什么需要它
 
-AI agent 每次会话都是全新开始。任务做到一半、文档散落各处、下次会话想不起来——进度管理是刚需。
+OpenClaw agent 每次会话都是全新启动。没有进度管理，你的工作会：
+- ❌ **上下文丢失**：任务跨会话做到一半，下次接不上
+- ❌ **文档散落**：报告和资料埋在随机文件夹，事后找不到
+- ❌ **无法回溯**：上周这个任务做了什么？——没了
+- ❌ **工具过重**：重型项目管理套件（CLI + 外部服务）对纯文件工作流是杀鸡用牛刀
 
-**这个 skill 解决三件事：**
-1. **进度记录**：每个任务/项目一份 PROGRESS.md，进度日志按时间追加，像 changelog，随时回溯
-2. **文档索引**：干活中天然生成的文档收进 `docs/`，卡片里挂索引，不怕忘
-3. **会话恢复**：新会话扫一眼卡片 frontmatter，全貌即知
+这个 skill 一次性解决：**目录即容器 + PROGRESS.md 进度卡 + 文档索引**。
 
 ## 特性
 
-- ✅ **双对象**：tasks（半小时~一周短期任务）+ projects（>一周时刻维护的长期项目）
-- ✅ **目录即容器**：`tasks/<slug>/`、`projects/<slug>/` 本身就是任务/项目，不另起炉灶
-- ✅ **PROGRESS.md 进度卡**：frontmatter（status/progress/docs）+ 进度日志 + 文档索引
-- ✅ **文档索引**：机器可读（YAML docs 数组）+ 人可读（索引表格）双通道
-- ✅ **建项克制**：只响应明确指令，不做全局技能钩子（吸取 v1 教训）
-- ✅ **零依赖**：纯文件操作，无 CLI、无外部服务、无数据库
-- ✅ **三件套协同**：与 workspace-initializer（目录规范）、memory-distill（记忆蒸馏）无缝衔接
+- 📁 **双对象**：tasks（半小时~一周短期任务）+ projects（>一周时刻维护的长期项目）
+- 🗂️ **目录即容器**：`tasks/<slug>/`、`projects/<slug>/` 本身就是任务/项目，不另起炉灶
+- 📋 **PROGRESS.md 进度卡**：frontmatter（status/progress/docs）+ 只追加进度日志 + 文档索引
+- 🔗 **文档索引**：机器可读（YAML docs 数组）+ 人可读（索引表格）双通道
+- 🚦 **建项克制**：只响应明确指令，不做全局技能钩子（v1 教训）
+- 🪶 **零依赖**：纯文件操作，无 CLI、无外部服务、无数据库
+- 🏠 **三件套协同**：与 initializer（目录规范）、memory-distill（记忆蒸馏）无缝衔接
 
 ## 安装
 
 ```bash
-# ClawHub
-openclaw skills install @dtsola/xiaoyaoclaw-task-progress-tracker
+# ClawHub（推荐）
+clawhub install xiaoyaoclaw-task-progress-tracker
 
-# 或手动：将项目目录复制到你的 skills 目录
-# 或 npx clawhub install xiaoyaoclaw-task-progress-tracker
+# 或从 GitHub 手动安装
+git clone https://github.com/dtsola/xiaoyaoclaw-task-progress-tracker
+# 把 SKILL.md 和 templates/ 放到你的 skills 目录
 ```
 
-## 使用（用户视角，自然语言即可）
+## 使用
 
-| 你想干嘛 | 直接说 |
-|---------|--------|
-| 开任务 | 「开个任务：调研 XX」 |
-| 建项目 | 「建个项目：XX 平台」 |
-| 更新进度 | 「任务 XX 进度：资料收集完了，开始写报告」 |
-| 挂文档 | 「任务 XX 挂个文档：outputs/xxx.png 是效果图」 |
-| 盘点 | 「现在有哪些任务/项目在跑？」 |
-| 查进度 | 「XX 项目现在到哪了？」 |
-| 完结 | 「任务 XX 完了」 |
+1. 把 skill 放到 OpenClaw 的 skills 目录
+2. 对 agent 说「**开个任务 xxx**」或「**建个项目 xxx**」，agent 会自动：建 `tasks/<slug>/` 或 `projects/<slug>/` 目录 + PROGRESS.md 卡片
+3. 日常维护：说一句进度、挂个文档，agent 自动更新卡片；打开任何 PROGRESS.md 即可看到状态、时间线、文档索引
 
-详细场景见 [USER_GUIDE.md](USER_GUIDE.md)。
+详细场景见 [USER_GUIDE.md](USER_GUIDE.md)（用户视角）。
 
-## 🚀 快速上手
+## 🚀 快速上手（三步，5 分钟）
 
-1. **安装**：`openclaw skills install @dtsola/xiaoyaoclaw-task-progress-tracker`
-2. **建第一个任务**：对 agent 说「开个任务：xxx」→ 自动生成 `tasks/xxx/PROGRESS.md`
-3. **日常维护**：干活时说一句进度、挂个文档，其余交给 agent
+### Step 1：安装技能
+
+```bash
+clawhub install xiaoyaoclaw-task-progress-tracker
+```
+
+### Step 2：建第一个任务
+
+对你的 agent 说：
+
+> 开个任务：调研 XX
+
+agent 自动完成：生成 slug → 建 `tasks/xx/` 目录 → 从模板创建 PROGRESS.md 卡片（status: active）→ 汇报路径。
+
+### Step 3：日常维护
+
+干活时说一句：
+
+> 任务 xx 进度：资料收集完了，开始写报告
+
+agent 自动追加进度日志 + 更新时间戳。报告出来了，再说一句「给任务 xx 挂个文档：FINAL_调研报告.md 是最终报告」，文档就进了索引，随时找得回。
+
+### 日常使用习惯
+
+| 场景 | 动作 |
+|---|---|
+| 开新任务 | 说「开个任务：xxx」 |
+| 建长期项目 | 说「建个项目：xxx」 |
+| 更新进度 | 说「任务 xxx 进度：…」 |
+| 归档文档 | 说「给 xxx 挂个文档：<路径> <说明>」 |
+| 盘点 | 说「现在有哪些任务/项目在跑？」 |
+| 查进度 | 说「xxx 现在到哪了？」 |
+| 完结 | 说「任务 xxx 完结」→ 标记 done + 记入当天日志 |
+
+## 与其他方案的区别
+
+| | v1（已废弃） | **xiaoyaoclaw-task-progress-tracker v2** |
+|---|---|---|
+| 状态载体 | PROGRESS.md 双轨制（状态层×内容层分离） | ✅ PROGRESS.md 唯一卡片（状态+日志+索引一体） |
+| 建项触发 | 任何技能激活即建项（误报爆炸） | ✅ 用户明确指令 / 明确预期 |
+| 文档管理 | 不管理 | ✅ docs/ 索引（cairn artifact 思想，无 CLI） |
+| 依赖 | 无 | ✅ 无（保持轻量） |
+| 外部服务 | 无 | ✅ 无（纯文件，真相源在工作区） |
 
 ## 目录结构
 
 ```
-tasks/<slug>/            # 短期任务（半小时~一周）
-└── PROGRESS.md          # 进度卡：状态 + 进度日志 + 文档索引
-projects/<slug>/         # 长期项目（>一周，时刻维护）
-├── PROGRESS.md          # 进度卡（含 progress 百分比）
-└── docs/                # 项目文档（可选）
+xiaoyaoclaw-task-progress-tracker/
+├── SKILL.md                    # 技能主体（意图识别表 + 操作手册 + 边界）
+├── templates/
+│   ├── task-card.md            # 任务 PROGRESS.md 模板
+│   └── project-card.md         # 项目 PROGRESS.md 模板
+├── assets/readme/              # hero + 群二维码
+├── DESIGN.md                   # 设计方案
+├── USER_GUIDE.md               # 用户使用指南
+├── README.md
+└── LICENSE
 ```
-
-卡片格式见 [templates/](templates/)。
 
 ## License
 
-[MIT](LICENSE) © 2026 dtsola
+MIT — 随便用，署名可选。
 
 ---
 
@@ -96,11 +129,8 @@ projects/<slug>/         # 长期项目（>一周，时刻维护）
 
 ## 姊妹项目
 
-| 项目 | 定位 |
-|------|------|
-| [xiaoyaoclaw-workspace-initializer](https://github.com/dtsola/xiaoyaoclaw-workspace-initializer) | 工作区目录规范（家） |
-| **xiaoyaoclaw-task-progress-tracker**（本仓库） | 任务/项目进度管理（状态） |
-| [xiaoyaoclaw-memory-distill](https://github.com/dtsola/xiaoyaoclaw-memory-distill) | 记忆蒸馏（内容） |
+- 🏠 **xiaoyaoclaw-workspace-initializer**（工作区初始化器）：给每个 agent 一个「家」——标准目录结构 + WORKSPACE.md 规范 + 多 agent 配置安全。<https://github.com/dtsola/xiaoyaoclaw-workspace-initializer>
+- 🧠 **xiaoyaoclaw-memory-distill**（记忆蒸馏）：把对话蒸馏成结构化记忆，解决上下文溢出。<https://github.com/dtsola/xiaoyaoclaw-memory-distill>
 
 ## 小遥Claw
 
