@@ -1,4 +1,8 @@
 <div align="center">
+  <strong>🇨🇳 中文</strong> | <a href="README.en.md">🌐 English</a>
+</div>
+
+<div align="center">
 
 # 🗂️ OpenClaw Task Progress Tracker（任务进度跟踪器）
 
