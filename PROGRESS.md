@@ -1,7 +1,7 @@
 ---
 type: project
 status: active
-progress: 60
+progress: 90
 created: 2026-08-26
 updated: 2026-08-26
 docs:
@@ -23,13 +23,15 @@ docs:
 
 ## 当前状态
 
-开发阶段：设计确认 ✅ → 模板 ✅ → SKILL.md ✅ → README/LICENSE ✅ → 全局技能同步 ✅ → **实测进行中** → 发布待做
+已发布：GitHub（main + MIT + topics×7 + 双语描述）✅ + ClawHub v1.0.0 已提交（pending-publication 待安全扫描公开）。实测通过（task + project 双卡片全链路）。
 
 ## 进度日志
 
 - 2026-08-26 11:36：调研交付，指挥官拍板自研方案
 - 2026-08-26 18:22：设计确认（PROGRESS.md 命名 + 用户视角指南）
 - 2026-08-26 18:37：模板 / SKILL.md / README / LICENSE / 全局技能同步完成，开始实测
+- 2026-08-26 18:45：实测通过（task + project 双卡片：立项→进度→挂文档→完结→日志）
+- 2026-08-26 18:50：发布完成——GitHub 仓库 + push（直连成功，代理 22307 挂）+ topics（gh CLI，API PUT 422 异常）+ ClawHub v1.0.0 提交
 
 ## 文档索引
 
@@ -39,3 +41,4 @@ docs:
 | USER_GUIDE.md | 用户使用指南 | 2026-08-26 |
 | SKILL.md | 技能主体 | 2026-08-26 |
 | README.md | 项目说明 | 2026-08-26 |
+
