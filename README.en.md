@@ -10,6 +10,7 @@
 > Pure files, zero dependencies, no CLI. Status + progress log + document index in one place — every task's progress is traceable, every document findable.
 
 ![license](https://img.shields.io/badge/license-MIT-green)
+- 📚 **xiaoyaoclaw-kb-retriever** (knowledge base retriever): local KB retrieval — hierarchical data_structure.md index navigation + progressive retrieval over md/pdf/xlsx, zero dependencies, Windows & macOS ready. <https://github.com/dtsola/xiaoyaoclaw-kb-retriever>
 [![ClawHub downloads](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fclawhub.ai%2Fapi%2Fv1%2Fskills%2Fxiaoyaoclaw-task-progress-tracker&query=skill.stats.downloads&label=ClawHub%20downloads&color=blue)](https://clawhub.ai/dtsola/skills/xiaoyaoclaw-task-progress-tracker)
 
 ## Why you need it

@@ -12,6 +12,7 @@
 > OpenClaw task & project progress tracking — manage tasks/ and projects/ with PROGRESS.md cards: status + progress log + document index.
 
 ![license](https://img.shields.io/badge/license-MIT-green)
+- 📚 **xiaoyaoclaw-kb-retriever**（知识库检索器）：本地知识库检索——分层 data_structure.md 索引导航 + 渐进式检索（md/pdf/xlsx），零依赖零 API key，Windows / macOS 双平台。<https://github.com/dtsola/xiaoyaoclaw-kb-retriever>
 [![ClawHub downloads](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fclawhub.ai%2Fapi%2Fv1%2Fskills%2Fxiaoyaoclaw-task-progress-tracker&query=skill.stats.downloads&label=ClawHub%20downloads&color=blue)](https://clawhub.ai/dtsola/skills/xiaoyaoclaw-task-progress-tracker)
 
 ## 为什么需要它
