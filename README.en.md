@@ -119,6 +119,7 @@ MIT — use it freely, attribution optional.
 
 - 🏠 **xiaoyaoclaw-workspace-initializer** (workspace initializer): gives every agent a "home" — standard directory structure + WORKSPACE.md rules + multi-agent config safety. <https://github.com/dtsola/xiaoyaoclaw-workspace-initializer>
 - 🧠 **xiaoyaoclaw-memory-distill** (memory distill): turns conversations into structured memory. <https://github.com/dtsola/xiaoyaoclaw-memory-distill>
+- 🩹 **xiaoyaoclaw-workspace-auditor**: read-only workspace health check — 5 categories, graded report with fix suggestions, zero-dependency, never modifies files. <https://github.com/dtsola/xiaoyaoclaw-workspace-auditor>
 
 ## 小遥Claw (XiaoyaoClaw)
 
