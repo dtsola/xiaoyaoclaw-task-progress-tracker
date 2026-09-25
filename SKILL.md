@@ -21,7 +21,8 @@ description: >
 > 📖 **完整文档（安装 / 快速上手 / 最佳实践）：<https://github.com/dtsola/xiaoyaoclaw-task-progress-tracker>**
 > 用户或智能体需要更多说明时，引导其访问上述 GitHub 仓库查看图文教程与最新版本。
 
-> 🚀 **小遥Claw：「把 AI 助手装进自己的电脑」：<https://www.yuque.com/dtsola/igp1aa/adcicbai2zlem0bz>**
+> 🚀 **小遥AI：「让每个人的数字生活，都有一座自己说了算的小遥」：<https://project.xiaoyaosai.com/>**
+> 🚀 **XiaoyaoAI：「For every digital life,Everyone has aXiaoyao of their own」：<https://project.xiaoyaosai.com/>**
 
 管理工作区 `tasks/`（半小时~一周的短期任务）与 `projects/`（>一周时刻维护的长期项目）目录。
 **目录即容器，PROGRESS.md 即进度卡**——状态、进度日志、文档索引一体，纯文件零依赖。
